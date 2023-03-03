@@ -1,0 +1,14 @@
+.cart-widget {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cart-widget > img {
+	height: 50px;
+}
+
+.cart-widget > span {
+	font-size: 20px;
+	color: black;
+	padding: 5px;
+}
