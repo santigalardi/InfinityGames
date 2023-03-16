@@ -1,0 +1,13 @@
+div.products-container {
+	padding: 10px;
+	margin: 20px 30px;
+}
+
+ul.products-list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}

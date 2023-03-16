@@ -1,9 +1,8 @@
 import Products from '../../mocks/products';
 import { useState, useEffect } from 'react';
-import ItemList from '../ItemList';
-import './itemListContainer.css';
+import ItemDetail from '../ItemDetail';
 
-function ItemListContainer({ categoryId, isCategoryRoute }) {
+function ItemDetailContainer({ isIdRoute, Id }) {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
@@ -13,9 +12,9 @@ function ItemListContainer({ categoryId, isCategoryRoute }) {
 
 		productsPromise
 			.then((response) => {
-				if (isCategoryRoute) {
-					const productsFiltered = response.filter(
-						(product) => product.category === categoryId
+				if (isIdRoute) {
+					const productsFiltered = response.find(
+						(product) => product.id === Id
 					);
 					setProducts(productsFiltered);
 				} else {
@@ -23,13 +22,13 @@ function ItemListContainer({ categoryId, isCategoryRoute }) {
 				}
 			})
 			.catch((err) => console.log(err));
-	}, [categoryId]);
+	}, [Id]);
 
 	return (
-		<div className='item-list-container'>
-			<ItemList products={products} />
+		<div className='item-detail-container'>
+			<ItemDetail products={products} />
 		</div>
 	);
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
