@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import ItemListContainer from '../components/ItemListContainer';
 
 function Root() {
@@ -8,7 +7,6 @@ function Root() {
 
 	return (
 		<div>
-			<NavBar />
 			<ItemListContainer
 				isCategoryRoute={isCategoryRoute}
 				categoryId={params.id}

@@ -4,31 +4,36 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 // Routes
-
+import Layout from './components/Layout';
 import Root from './routes/root';
-import ItemRoot from './routes/item';
+import Item from './routes/item';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
 	{
-		path: '/',
-		element: <Root />,
-	},
-	{
-		path: '/category/:id',
-		element: <Root />,
-	},
-	{
-		path: '/item/:id',
-		element: <ItemRoot />,
-	},
-	{
-		path: '/cart',
-		element: <div>Hello world!</div>,
-	},
-	{
-		path: '/checkout',
-		element: <div>Hello world!</div>,
+		element: <Layout />,
+		children: [
+			{
+				path: '/',
+				element: <Root />,
+			},
+			{
+				path: '/category/:id',
+				element: <Root />,
+			},
+			{
+				path: '/item/:id',
+				element: <Item />,
+			},
+			{
+				path: '/cart',
+				element: <div>Hello world!</div>,
+			},
+			// {
+			// 	path: '/checkout',
+			// 	element: <div>Hello world!</div>,
+			// },
+		],
 	},
 ]);
 

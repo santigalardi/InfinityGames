@@ -1,31 +1,41 @@
 import CartWidget from '../CartWidget';
-import './navBar.css';
 import { NavLink } from 'react-router-dom';
 
 // react-bootstrap components
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import './navBar.css';
 
 function NavBar() {
 	return (
 		<Navbar bg='light' variant='light'>
 			<Container>
 				<Navbar.Brand href='#home'>
-					<NavLink to={'/'}>Infinity Games</NavLink>
+					<NavLink to={'/'} className='nav-logo'>
+						Infinity Games
+					</NavLink>
 				</Navbar.Brand>
 				<Nav className='me-auto'>
 					<Nav.Link>
-						<NavLink to={'/category/Acción'}>Acción</NavLink>
+						<NavLink to={'/category/Acción'} className='nav-btn'>
+							Acción
+						</NavLink>
 					</Nav.Link>
 					<Nav.Link>
-						<NavLink to={'/category/Carreras'}>Carreras</NavLink>
+						<NavLink to={'/category/Carreras'} className='nav-btn'>
+							Carreras
+						</NavLink>
 					</Nav.Link>
 					<Nav.Link>
-						<NavLink to={'/category/Deportes'}>Deportes</NavLink>
+						<NavLink to={'/category/Deportes'} className='nav-btn'>
+							Deportes
+						</NavLink>
 					</Nav.Link>
 					<Nav.Link>
-						<NavLink to={'/category/Lucha'}>Lucha</NavLink>
+						<NavLink to={'/category/Lucha'} className='nav-btn'>
+							Lucha
+						</NavLink>
 					</Nav.Link>
 				</Nav>
 				<CartWidget />

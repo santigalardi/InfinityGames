@@ -4,6 +4,7 @@ import ItemDetail from '../ItemDetail';
 
 function ItemDetailContainer({ isIdRoute, Id }) {
 	const [products, setProducts] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const productsPromise = new Promise((resolve, reject) =>
@@ -13,20 +14,26 @@ function ItemDetailContainer({ isIdRoute, Id }) {
 		productsPromise
 			.then((response) => {
 				if (isIdRoute) {
-					const productsFiltered = response.find(
-						(product) => product.id === Id
-					);
+					// eslint-disable-next-line eqeqeq
+					const productsFiltered = response.find((product) => product.id == Id);
 					setProducts(productsFiltered);
 				} else {
 					setProducts(response);
 				}
+				setIsLoading(false);
 			})
 			.catch((err) => console.log(err));
 	}, [Id]);
 
 	return (
 		<div className='item-detail-container'>
-			<ItemDetail products={products} />
+			{isLoading ? (
+				// se muestra el mensaje de "cargando" si isLoading es verdadero
+				<div>Cargando...</div>
+			) : (
+				// se muestra el componente hijo ItemDetail si isLoading es falso
+				<ItemDetail products={products} />
+			)}
 		</div>
 	);
 }
