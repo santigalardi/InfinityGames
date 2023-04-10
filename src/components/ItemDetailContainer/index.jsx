@@ -19,7 +19,6 @@ function ItemDetailContainer({ loading }) {
 						id: snapshot.id,
 						...snapshot.data(),
 					});
-					console.log(snapshot.data());
 				}
 			})
 			.catch((error) => console.log({ error }));
