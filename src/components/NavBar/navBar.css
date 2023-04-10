@@ -1,5 +1,5 @@
 .navbar {
-	height: 80px;
+	height: 10vh;
 	margin-bottom: 20px;
 }
 
@@ -14,8 +14,11 @@
 	color: black;
 }
 
-.nav-btn {
+.navbar-btn {
 	text-decoration: none;
 	color: black;
 	font-size: 20px;
+}
+.navbar-btn:hover {
+	color: rgb(66, 18, 121);
 }

@@ -1,39 +1,37 @@
-import Products from '../../mocks/products';
 import { useState, useEffect } from 'react';
-import ItemDetail from '../ItemDetail';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
+import ItemDetail from '../ItemDetail/Index.jsx';
+import Loader from '../Loader/Index.jsx';
 
-function ItemDetailContainer({ isIdRoute, Id }) {
-	const [products, setProducts] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
+function ItemDetailContainer({ loading }) {
+	const [product, setProduct] = useState(null);
+	const params = useParams();
 
 	useEffect(() => {
-		const productsPromise = new Promise((resolve, reject) =>
-			setTimeout(() => resolve(Products), 2000)
-		);
+		const db = getFirestore();
+		const itemRef = doc(db, 'items', params.id);
 
-		productsPromise
-			.then((response) => {
-				if (isIdRoute) {
-					// eslint-disable-next-line eqeqeq
-					const productsFiltered = response.find((product) => product.id == Id);
-					setProducts(productsFiltered);
-				} else {
-					setProducts(response);
+		getDoc(itemRef)
+			.then((snapshot) => {
+				if (snapshot.exists()) {
+					setProduct({
+						id: snapshot.id,
+						...snapshot.data(),
+					});
+					console.log(snapshot.data());
 				}
-				setIsLoading(false);
 			})
-			.catch((err) => console.log(err));
-	}, [Id]);
+			.catch((error) => console.log({ error }));
+	}, []);
+
+	if (!product) {
+		return <Loader loading={loading} />;
+	}
 
 	return (
 		<div className='item-detail-container'>
-			{isLoading ? (
-				// se muestra el mensaje de "cargando" si isLoading es verdadero
-				<div>Cargando...</div>
-			) : (
-				// se muestra el componente hijo ItemDetail si isLoading es falso
-				<ItemDetail products={products} />
-			)}
+			<ItemDetail product={product} />
 		</div>
 	);
 }

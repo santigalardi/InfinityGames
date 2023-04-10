@@ -1,0 +1,28 @@
+.container-itemCount {
+	display: flex;
+	width: 275px;
+	justify-content: space-between;
+}
+
+.itemCount-btns-container {
+	display: flex;
+	width: 100px;
+	justify-content: space-between;
+}
+
+.itemCount-counter {
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	text-shadow: 1px 2px 0.7 black;
+}
+
+.itemCount-btn {
+	width: 40px;
+}
+
+.itemCount-error {
+	color: rgb(195, 20, 20);
+	margin: 20px 0;
+}

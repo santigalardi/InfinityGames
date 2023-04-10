@@ -1,0 +1,45 @@
+.form-container {
+	height: 80vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.form {
+	padding: 70px 0 0;
+	width: 50vw;
+	height: 80vh;
+}
+
+.form label {
+	font-size: 20px;
+	width: 100px;
+	margin: 15px;
+}
+
+.form p {
+	color: red;
+	padding: 0;
+	padding-left: 30px;
+
+	margin: 0;
+}
+
+.form input {
+	width: 30vw;
+	border: 0.5px solid black;
+	border-radius: 5px;
+	color: black;
+	background-color: transparent;
+}
+
+.submit-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30vh;
+}
+
+.submit-container button {
+	background-color: #0d6efd;
+}

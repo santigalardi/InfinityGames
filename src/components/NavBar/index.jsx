@@ -11,31 +11,29 @@ function NavBar() {
 	return (
 		<Navbar bg='light' variant='light'>
 			<Container>
-				<Navbar.Brand href='#home'>
-					<NavLink to={'/'} className='nav-logo'>
-						Infinity Games
-					</NavLink>
+				<Navbar.Brand href='#home' as={NavLink} to={'/'} className='nav-logo'>
+					Infinity Games
 				</Navbar.Brand>
 				<Nav className='me-auto'>
-					<Nav.Link>
-						<NavLink to={'/category/Acción'} className='nav-btn'>
-							Acción
-						</NavLink>
+					<Nav.Link as={NavLink} to={'/category/Acción'} className='navbar-btn'>
+						Acción
 					</Nav.Link>
-					<Nav.Link>
-						<NavLink to={'/category/Carreras'} className='nav-btn'>
-							Carreras
-						</NavLink>
+					<Nav.Link
+						as={NavLink}
+						to={'/category/Carreras'}
+						className='navbar-btn'
+					>
+						Carreras
 					</Nav.Link>
-					<Nav.Link>
-						<NavLink to={'/category/Deportes'} className='nav-btn'>
-							Deportes
-						</NavLink>
+					<Nav.Link
+						as={NavLink}
+						to={'/category/Deportes'}
+						className='navbar-btn'
+					>
+						Deportes
 					</Nav.Link>
-					<Nav.Link>
-						<NavLink to={'/category/Lucha'} className='nav-btn'>
-							Lucha
-						</NavLink>
+					<Nav.Link as={NavLink} to={'/category/Lucha'} className='navbar-btn'>
+						Lucha
 					</Nav.Link>
 				</Nav>
 				<CartWidget />

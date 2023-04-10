@@ -1,18 +1,22 @@
-.img-container {
+.detail-img-container {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	margin-top: 20px;
 }
 
-.img-container img {
-	width: 100%;
+.detail-img-container-img {
+	width: 320px;
 	border: 1px solid black;
 	border-radius: 1%;
 }
 
+.details-container {
+	padding-left: 30px;
+}
+
 .details-container h2 {
-	padding: 10px 0px;
+	margin-top: 25px;
 }
 
 .details2-container {
@@ -31,13 +35,15 @@
 	color: gray;
 }
 
-.btn-detail {
-	margin-bottom: 20px;
-}
-
 .description {
+	margin: 10px 0 20px;
+
 	font-size: 18px;
 	text-align: justify;
+}
+
+.stock {
+	margin: 20px 0;
 }
 
 .description h5 {

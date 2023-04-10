@@ -1,13 +1,28 @@
-import { useParams } from 'react-router-dom';
-import ItemDetailContainer from '../components/ItemDetailContainer';
+import { useState, useEffect } from 'react';
+import Loader from '../components/Loader/Index.jsx';
+import ItemDetailContainer from '../components/ItemDetailContainer/Index.jsx';
 
 function Item() {
-	const params = useParams();
-	const isIdRoot = Boolean(params.id);
+	const [loading, setLoading] = useState(true);
+	const [itemReady, setItemReady] = useState(false);
+
+	useEffect(() => {
+		const timer = setTimeout(() => setLoading(false), 2000);
+		return () => clearTimeout(timer);
+	}, []);
+
+	useEffect(() => {
+		setItemReady(true);
+	}, []);
 
 	return (
 		<div>
-			<ItemDetailContainer isIdRoute={isIdRoot} Id={params.id} />
+			<Loader loading={loading} />
+			{itemReady && (
+				<div className={`item-detail-container ${loading ? 'hidden' : ''}`}>
+					<ItemDetailContainer />
+				</div>
+			)}
 		</div>
 	);
 }
