@@ -6,7 +6,7 @@ import {
 	query,
 	where,
 } from 'firebase/firestore';
-import ItemList from '../ItemList/index.jsx';
+import ItemList from '../ItemList/ItemList.jsx';
 import './itemListContainer.css';
 
 function ItemListContainer({ categoryId, isCategoryRoute }) {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Loader from '../components/Loader/Index';
-import ItemDetailContainer from '../components/ItemDetailContainer/Index';
+import Loader from '../components/Loader/Loader';
+import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 
 function Item() {
 	const [loading, setLoading] = useState(true);
