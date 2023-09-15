@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import ItemListContainer from '../components/ItemListContainer/Index';
-import Loader from '../components/Loader/Index';
+import ItemListContainer from '../components/ItemListContainer';
+import Loader from '../components/Loader';
 
 function Root() {
 	const [loading, setLoading] = useState(true);

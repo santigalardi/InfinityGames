@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
-import ItemDetail from '../ItemDetail/Index.jsx';
-import Loader from '../Loader/Index.jsx';
+import ItemDetail from '../ItemDetail/index.jsx';
+import Loader from '../Loader/index.jsx';
 
 function ItemDetailContainer({ loading }) {
 	const [product, setProduct] = useState(null);
