@@ -20,7 +20,7 @@ function ItemDetail({ product }) {
 	return (
 		<Container>
 			<Row>
-				<Col lg={4} className='detail-img-container'>
+				<Col lg={5} className='detail-img-container'>
 					<img
 						src={product.image}
 						alt='img'

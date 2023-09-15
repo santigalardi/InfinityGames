@@ -1,18 +1,18 @@
 .detail-img-container {
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+	justify-content: flex-start;
 	margin-top: 20px;
+	margin-right: 20px;
 }
 
 .detail-img-container-img {
-	width: 500px;
+	width: 450px;
 	border: 1px solid black;
 	border-radius: 1%;
 }
 
 .details-container {
-	padding-left: 30px;
+	/* padding: 20px; */
 }
 
 .details-container h2 {
