@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Context } from '../context/CustomContext';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import removeIcon from '../assets/images/x-mark.png';
 import '../styles/cart.css';
 
 const Cart = () => {
@@ -36,11 +37,7 @@ const Cart = () => {
 									onClick={() => onRemove(product.id)}
 									className='btn-eliminar'
 								>
-									<img
-										src='src/assets/images/cruz.png'
-										alt='eliminar'
-										className='remove-img'
-									/>
+									<img src={removeIcon} alt='eliminar' className='remove-img' />
 								</button>
 							</div>
 						</div>
